@@ -1,0 +1,69 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+
+
+    <script  type="text/babel"> 
+    const element =(<strong> bienvenue à tous </strong>);
+    ReactDOM.render(element,document.getElementById("root"));
+  </script>
+
+
+
+  <script type="text/babel">
+    const apprenant ={
+        nomApprenant :'Nom',
+        prenomApprenant:'Prénom'  
+    };
+
+    function acceuilEtudiant(aprenant){
+        return apprenant.nomApprenant+' '+ apprenant.prenomApprenant;
+    }
+     const elt =(<strong>Bonne découverte de react {acceuilEtudiant(apprenant)}</strong>)
+
+     ReactDOM.render(elt,document.getElementById("root"));
+  </script>
+
+
+    <script type="text/babel">
+        class NomComposant extends React.Component{
+            render(){
+                return <strong>Bonne découverte de react</strong>
+            }
+        }
+        ReactDOM.render(<NomComposant />,document.getElementById("root"));
+    </script>
+
+
+<script type="text/babel">
+    const nomPrenom ={
+        nomApprenant :'Nom',
+        prenomApprenant:'Prénom '
+    };
+
+    function acceuilEtudiant(aprenant){
+        return nomPrenom.nomApprenant+' '+ nomPrenom.prenomApprenant;
+    }
+    const fullname =(<strong>Bonne découverte de react {acceuilEtudiant(apprenant)}</strong>)
+
+    class Etudiant extends React.Component{
+        render(){
+            return fullname;
+        }
+    }
+    ReactDOM.render(<Etudiant />,document.getElementById("root"));
+</script>
+
+</body>
+</html>
